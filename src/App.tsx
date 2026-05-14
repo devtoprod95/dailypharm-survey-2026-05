@@ -99,10 +99,10 @@ export default function App() {
       <section className="w-full max-w-[480px] py-10 px-4 box-border">
         <div className="w-full bg-white rounded-3xl border border-gray-200 shadow-xl px-5 py-10 sm:px-8 box-border overflow-hidden">
           <div className="text-center mb-8">
-            <h2 className="text-[22px] font-black text-gray-900 mb-2 tracking-tight break-keep">팜스타트 대행 서비스 신청</h2>
-            <p className="text-[15px] font-bold text-gray-800 break-keep leading-relaxed mt-6">
+            <h2 className="text-[22px] font-black text-gray-900 mb-2 tracking-tight break-keep">팜스타트 체험단 신청</h2>
+            {/* <p className="text-[15px] font-bold text-gray-800 break-keep leading-relaxed mt-6">
               ✨ 현재 팜스타트 패키지 신청 시 <span className="text-teal-600">39만원 이상 절감 혜택</span> 제공 중!
-            </p>
+            </p> */}
           </div>
 
           <div className="space-y-5 mb-8 w-full">
@@ -132,7 +132,7 @@ export default function App() {
               content={(
                 <ul className="list-none p-0 m-0 space-y-1">
                   <li>수집 업체 : 데일리팜</li>
-                  <li>수집 목적 : SNS 온라인 대행 6개월 패키지 상담 정보 제공</li>
+                  <li>수집 목적 : SNS 온라인 대행 1개월 체험 패키지 정보 제공</li>
                   <li>수집 항목 : 성명/약국명/연락처</li>
                   <li>보관 기간 : 신청 후 1년</li>
                 </ul>
@@ -156,7 +156,7 @@ export default function App() {
           {/* 추가된 안내 문구 */}
           <div className="text-center mb-6">
             <p className="text-red-500 text-[14px] font-bold break-keep">
-              ※ 미동의 시 상담 및 이벤트 혜택 수령이 불가능합니다.
+              ※ 미동의 시 1개월 체험 패키지 서비스 진행이 불가합니다.
             </p>
           </div>
 
@@ -166,12 +166,22 @@ export default function App() {
             disabled={isSubmitting}
             className={`w-full py-4.5 rounded-xl text-[17px] font-bold text-white shadow-lg transition-all ${isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-[#2D3136] hover:bg-black active:scale-95 cursor-pointer"}`}
           >
-            {isSubmitting ? "신청 데이터를 보내는 중..." : "무료 상담하고 혜택 받기"}
+            {isSubmitting ? "신청 데이터를 보내는 중..." : "한 달 체험단 신청하기"}
           </button>
 
           {/* 하단 푸터 문구 */}
           <p className="text-center text-gray-800 text-[14px] mt-6 font-bold">
-            정보는 서비스 안내 및 상담 목적으로만 사용됩니다.
+            정보는 서비스 안내 및 대행 체험 운영 목적으로만 사용됩니다.
+          </p>
+
+          <p className="text-center text-gray-500 text-[12px] mt-3 font-bold break-keep">
+            관련 문의 이메일 : 
+            <a 
+              href="mailto:pharmstart@dailypharm.com" 
+              className="hover:underline ml-1"
+            >
+              pharmstart@dailypharm.com
+            </a>
           </p>
         </div>
       </section>
