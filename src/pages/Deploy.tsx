@@ -7,7 +7,7 @@ export default function Deploy() {
   const [token, setToken] = useState('');
 
   const REPO_OWNER = "devtoprod95";
-  const REPO_NAME = "dailypharm-survey";
+  const REPO_NAME = "dailypharm-survey-2026-05";
   const FILE_PATH = "public/assets/landing_pending.png";
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {

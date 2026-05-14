@@ -37,7 +37,7 @@ export default function FirebaseTest() {
             for (let i = 1; i <= 20; i++) {
                 const customTime = new Date(baseTime.getTime() + i * 60000);
     
-                await addDoc(collection(db, "survey"), {
+                await addDoc(collection(db, "survey-2026-05"), {
                     target: '대행서비스 신청 페이지',
                     name: `김도한${i}`,
                     phone: `0102546${(6499 + i).toString()}`,

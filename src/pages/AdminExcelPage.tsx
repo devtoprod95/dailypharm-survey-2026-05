@@ -50,7 +50,7 @@ function ExcelPageContent() {
 
   const fetchTotalCount = async (type: string, text: string) => {
     try {
-      const coll = collection(db, "survey");
+      const coll = collection(db, "survey-2026-05");
       let q = query(coll);
       if (text.trim() !== "") {
         q = query(coll, where(type, "==", text.trim()));
@@ -65,7 +65,7 @@ function ExcelPageContent() {
   const fetchData = useCallback(async (direction: 'first' | 'next' | 'prev' | 'stay', type: string, text: string) => {
     setLoading(true);
     try {
-      const collRef = collection(db, "survey");
+      const collRef = collection(db, "survey-2026-05");
       let queryConstraints: any[] = [];
 
       if (text.trim() !== "") {
@@ -78,15 +78,15 @@ function ExcelPageContent() {
       let q;
       // [수정] stay: 새로고침 시 현재 ID 좌표부터 데이터를 가져옴
       if (direction === 'stay' && firstId) {
-        const cursorDoc = await getDoc(doc(db, "survey", firstId));
+        const cursorDoc = await getDoc(doc(db, "survey-2026-05", firstId));
         q = query(collRef, ...queryConstraints, startAt(cursorDoc), limit(PAGE_SIZE));
       } 
       else if (direction === 'next' && lastId) {
-        const cursorDoc = await getDoc(doc(db, "survey", lastId));
+        const cursorDoc = await getDoc(doc(db, "survey-2026-05", lastId));
         q = query(collRef, ...queryConstraints, startAfter(cursorDoc), limit(PAGE_SIZE));
       } 
       else if (direction === 'prev' && firstId) {
-        const cursorDoc = await getDoc(doc(db, "survey", firstId));
+        const cursorDoc = await getDoc(doc(db, "survey-2026-05", firstId));
         q = query(collRef, ...queryConstraints, endBefore(cursorDoc), limitToLast(PAGE_SIZE));
       } 
       else {

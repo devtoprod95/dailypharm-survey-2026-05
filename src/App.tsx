@@ -62,7 +62,7 @@ export default function App() {
     try {
       const cleanPhone = form.phone.trim().replace(/-/g, "");
 
-      await addDoc(collection(db, "survey"), {
+      await addDoc(collection(db, "survey-2026-05"), {
         target: '대행서비스 신청 페이지',
         name: form.name.trim(),
         phone: cleanPhone,
